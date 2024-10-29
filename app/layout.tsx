@@ -1,8 +1,6 @@
 // app/[locale]/layout.tsx
 
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
 import './globals.css';
 import { Comic_Neue } from 'next/font/google';
 
