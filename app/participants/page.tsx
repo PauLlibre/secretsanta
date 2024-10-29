@@ -148,56 +148,57 @@ export default function Participants() {
           name="keywords"
           content="Secret Santa, Participants, Gift Exchange, Wishlist, Budget"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50">
-        <div className="max-w-4xl mx-auto p-8">
-          <div className="flex justify-between items-center mb-8">
+        <div className="max-w-4xl mx-auto p-4 sm:p-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-8">
             <button
               onClick={() => router.back()}
-              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center gap-2 shadow-md"
+              className="w-full sm:w-auto bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
             >
               <FaSleigh className="text-xl" /> Return
             </button>
             <button
               onClick={downloadTemplate}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center gap-2 shadow-md"
+              className="w-full sm:w-auto bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
             >
               <FaDownload className="text-xl" /> Download CSV Template
             </button>
           </div>
 
-          <h1 className="text-4xl font-bold mb-12 text-center text-gray-800 flex items-center justify-center gap-4">
-            <FaGift className="text-red-600 text-3xl" />
+          <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-gray-800 flex items-center justify-center gap-4">
+            <FaGift className="text-red-600 text-2xl sm:text-3xl" />
             Secret Santa
-            <FaGift className="text-green-600 text-3xl" />
+            <FaGift className="text-green-600 text-2xl sm:text-3xl" />
           </h1>
 
-          <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
-            <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">
+          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-xl mb-8 sm:mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
               Upload Participants
             </h2>
             <div
               {...getRootProps()}
-              className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-red-400 transition-colors duration-200"
+              className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-8 text-center cursor-pointer hover:border-red-400 transition-colors duration-200"
             >
               <input {...getInputProps()} />
-              <FaUpload className="mx-auto text-3xl text-gray-400 mb-4" />
+              <FaUpload className="mx-auto text-2xl sm:text-3xl text-gray-400 mb-4" />
               {isDragActive ? (
-                <p className="text-gray-600">Drop the CSV file here...</p>
+                <p className="text-sm sm:text-base text-gray-600">Drop the CSV file here...</p>
               ) : (
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600">
                   Drag and drop a CSV file here, or click to select one
                 </p>
               )}
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
-            <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">
+          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-xl mb-8 sm:mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
               Add Individual Participant
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <input
                   type="text"
                   placeholder="Name"
@@ -229,7 +230,7 @@ export default function Participants() {
                     onChange={(e) => setFixedBudget(e.target.checked)}
                     className="w-4 h-4"
                   />
-                  <label htmlFor="fixedBudget" className="text-gray-700">
+                  <label htmlFor="fixedBudget" className="text-sm sm:text-base text-gray-700">
                     Fixed Budget
                   </label>
                 </div>
@@ -268,36 +269,36 @@ export default function Participants() {
             </form>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
-            <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">
+          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-xl mb-8 sm:mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
               Participant List
             </h2>
-            <div className="grid gap-6">
+            <div className="grid gap-4 sm:gap-6">
               {participants.map((participant, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                  className="bg-gray-50 p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-gray-700">
+                      <p className="text-sm sm:text-base text-gray-700">
                         <span className="font-semibold">Name:</span>{" "}
                         {participant.username}
                       </p>
-                      <p className="text-gray-700">
+                      <p className="text-sm sm:text-base text-gray-700">
                         <span className="font-semibold">Email:</span>{" "}
                         {participant.email}
                       </p>
                     </div>
                     <div>
                       {participant.wishlist && (
-                        <p className="text-gray-700">
+                        <p className="text-sm sm:text-base text-gray-700">
                           <span className="font-semibold">Wishlist:</span>{" "}
                           {participant.wishlist}
                         </p>
                       )}
                       {participant.budget && (
-                        <p className="text-gray-700">
+                        <p className="text-sm sm:text-base text-gray-700">
                           <span className="font-semibold">Budget Range:</span>{" "}
                           {participant.budget}
                         </p>
@@ -306,7 +307,7 @@ export default function Participants() {
                   </div>
                   <button
                     onClick={() => handleDelete(index)}
-                    className="mt-4 bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-200 transition-colors duration-200 flex items-center gap-2"
+                    className="mt-4 bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-200 transition-colors duration-200 flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start"
                   >
                     <FaTrash /> Remove
                   </button>
@@ -318,11 +319,11 @@ export default function Participants() {
               <button
                 onClick={assignSecretSanta}
                 disabled={isLoading}
-                className={`mt-8 w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-3 shadow-md text-lg font-semibold ${
+                className={`mt-6 sm:mt-8 w-full bg-green-600 text-white py-3 sm:py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-3 shadow-md text-base sm:text-lg font-semibold ${
                   isLoading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
-                <FaSleigh className="text-2xl" />
+                <FaSleigh className="text-xl sm:text-2xl" />
                 {isLoading ? "Loading..." : "Start Exchange"}
               </button>
             )}
