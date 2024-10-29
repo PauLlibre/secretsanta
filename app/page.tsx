@@ -11,6 +11,10 @@ export default function Home() {
     router.push(`/participants`);
   };
 
+  const handleHolidayActivities = () => {
+    router.push('/blog/holiday-activities');
+  };
+
   return (
     <>
       <Head>
@@ -71,13 +75,20 @@ export default function Home() {
             <p className="text-gray-700 max-w-3xl mx-auto mb-10 text-lg sm:text-xl md:text-2xl leading-relaxed">
               Organize your Secret Santa gift exchange effortlessly! Set up participants, manage wishlists, and let us handle the random assignments. Perfect for families, friends, and office celebrations.
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center gap-4">
               <button
                 onClick={handleStart}
                 className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-500 text-white px-8 sm:px-10 py-4 rounded-xl hover:from-green-700 hover:to-green-600 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg text-lg sm:text-xl md:text-2xl font-bold transform hover:scale-105 hover:shadow-xl"
               >
                 <FaGift className="text-xl sm:text-2xl md:text-3xl" aria-hidden="true" />
                 Start Exchange
+              </button>
+              <button
+                onClick={handleHolidayActivities}
+                className="w-full sm:w-auto bg-gradient-to-r from-red-600 to-red-500 text-white px-8 sm:px-10 py-4 rounded-xl hover:from-red-700 hover:to-red-600 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg text-lg sm:text-xl md:text-2xl font-bold transform hover:scale-105 hover:shadow-xl"
+              >
+                <FaSleigh className="text-xl sm:text-2xl md:text-3xl" aria-hidden="true" />
+                Holiday Activities
               </button>
             </div>
           </section>
