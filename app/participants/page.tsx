@@ -330,6 +330,11 @@ export default function Participants() {
           </div>
         </div>
       </div>
+      <footer className="py-8 text-center text-gray-600 border-t border-gray-200">
+          <div className="max-w-5xl mx-auto px-4">
+            &copy; {new Date().getFullYear()} Easy Secret Santa. All rights reserved.
+          </div>
+        </footer>
     </>
   );
 }
