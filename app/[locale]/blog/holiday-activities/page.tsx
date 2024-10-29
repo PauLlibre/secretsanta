@@ -11,11 +11,11 @@ export const generateStaticParams = () => {
   ];
 };
 
-interface PageProps {
+interface HolidayActivitiesProps {
   params: { locale: string };
 }
 
-export default function HolidayActivities({ params }: PageProps) {
+export default function HolidayActivities({ params }: HolidayActivitiesProps): JSX.Element {
   setRequestLocale(params.locale);
 
   return <HolidayActivitiesContent />;
