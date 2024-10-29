@@ -6,7 +6,7 @@ import Head from "next/head";
 import Faqs from "../components/faqs";
 import { useTranslations } from 'next-intl';
 
-export default function Home({ params }: { params: { locale: string } }) {
+export default function Home() {
   const router = useRouter();
   const t = useTranslations('home');
   const commonT = useTranslations('common');

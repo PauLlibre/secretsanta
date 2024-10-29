@@ -5,6 +5,7 @@ import { FaRedo, FaShareAlt, FaWhatsapp, FaFacebook, FaTwitter } from "react-ico
 import Confetti from "react-confetti";
 import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export default function Done() {
   const t = useTranslations('done');
@@ -131,13 +132,13 @@ export default function Done() {
             >
               <FaRedo className="text-xl" aria-hidden="true" /> {t('buttons.organizeAnother')}
             </button>
-            <a
+            <Link
               href="/blog/holiday-activities"
               className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center gap-2 shadow-md"
               aria-label={t('buttons.holidayActivities')}
             >
               <FaShareAlt className="text-xl" aria-hidden="true" /> {t('buttons.holidayActivities')}
-            </a>
+            </Link>
           </div>
         </section>
       </main>

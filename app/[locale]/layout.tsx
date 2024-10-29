@@ -50,7 +50,7 @@ export async function generateMetadata({
         creator: "@easysecretsanta",
       },
     };
-  } catch (error) {
+  } catch {
     return {
       title: 'Easy Secret Santa',
       description: 'Organize your Secret Santa gift exchange'
@@ -73,7 +73,7 @@ export default async function LocaleLayout({
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
+  } catch {
     notFound();
   }
 
