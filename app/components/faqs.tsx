@@ -24,7 +24,7 @@ export default function Faqs() {
           <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h3 className="text-xl font-semibold mb-4 text-gray-800">Can I set a budget for the gift exchange?</h3>
             <p className="text-gray-700">
-              Absolutely! You can set either a global budget for all participants or individual budgets. This helps ensure everyone's comfort level and creates a fair exchange experience.
+              Absolutely! You can set either a global budget for all participants or individual budgets. This helps ensure everyone&apos;s comfort level and creates a fair exchange experience.
             </p>
           </div>
 
@@ -36,9 +36,9 @@ export default function Faqs() {
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">What if someone doesn't receive their assignment email?</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">What if someone doesn&apos;t receive their assignment email?</h3>
             <p className="text-gray-700">
-              Assignment emails are sent immediately after the exchange is started. If someone doesn't receive their email, check their spam folder first. You can also restart the assignment process if needed.
+              Assignment emails are sent immediately after the exchange is started. If someone doesn&apos;t receive their email, check their spam folder first. You can also restart the assignment process if needed.
             </p>
           </div>
 
