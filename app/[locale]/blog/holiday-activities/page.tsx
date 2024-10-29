@@ -12,16 +12,12 @@ import exchangeGifts from "../../../../public/images/gifts.jpg";
 import singCarols from "../../../../public/images/carols.jpg";
 import watchMovies from "../../../../public/images/movies.jpg";
 import christmasMarket from "../../../../public/images/christmas-market.jpg";
-import { setRequestLocale } from 'next-intl/server';
 
 interface PageProps {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
-export default async function HolidayActivities({ params }: PageProps) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  
+export default function HolidayActivities({ params }: PageProps) {
   const router = useRouter();
   const t = useTranslations('holidayActivities');
   const common = useTranslations('common');
