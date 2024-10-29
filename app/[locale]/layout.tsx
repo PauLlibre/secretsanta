@@ -57,11 +57,6 @@ export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'es' }, { locale: 'cat' }, { locale: 'fr' }, { locale: 'it' }];
 }
 
-interface LayoutProps {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}
-
 export default async function LocaleLayout(
     props: Promise<{ children: React.ReactNode; params: { locale: string } }>
 ): Promise<JSX.Element> {
