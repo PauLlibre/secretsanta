@@ -13,11 +13,8 @@ import singCarols from "../../../../public/images/carols.jpg";
 import watchMovies from "../../../../public/images/movies.jpg";
 import christmasMarket from "../../../../public/images/christmas-market.jpg";
 
-interface PageProps {
-  params: { locale: string };
-}
 
-export default function HolidayActivities({ params }: PageProps) {
+export default function HolidayActivities() {
   const router = useRouter();
   const t = useTranslations('holidayActivities');
   const common = useTranslations('common');
