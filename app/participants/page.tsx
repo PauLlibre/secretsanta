@@ -148,11 +148,6 @@ export default function Participants() {
           name="keywords"
           content="Secret Santa, Participants, Gift Exchange, Wishlist, Budget"
         />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6085265425953301"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
       <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50">
         <div className="max-w-4xl mx-auto p-8">

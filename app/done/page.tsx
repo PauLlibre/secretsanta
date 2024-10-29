@@ -42,11 +42,6 @@ export default function Done() {
           content="Gift exchange successfully completed! Share the holiday joy with friends and family."
         />
         <link rel="canonical" href="https://yourdomain.com/done" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6085265425953301"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto p-8">

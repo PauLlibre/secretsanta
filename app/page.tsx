@@ -26,11 +26,6 @@ export default function Home() {
           name="keywords"
           content="Secret Santa, gift exchange, holiday, Christmas, organize, manage, share"
         />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6085265425953301"
-          crossOrigin="anonymous"
-        ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50">
