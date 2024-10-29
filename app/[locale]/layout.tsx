@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'es' }, { locale: 'cat' }];
+  return [{ locale: 'en' }, { locale: 'es' }, { locale: 'cat' }, { locale: 'fr' }, { locale: 'it' }];
 }
 
 export default async function LocaleLayout({
