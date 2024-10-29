@@ -1,9 +1,11 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { FaGift, FaSleigh, FaTrash } from 'react-icons/fa';
+import { FaGift, FaSleigh, FaTrash, FaDownload, FaUpload } from 'react-icons/fa';
 import Head from 'next/head';
+import { useDropzone } from 'react-dropzone';
+import Papa from 'papaparse';
 
 export default function Participants() {
   const router = useRouter();
@@ -45,6 +47,42 @@ export default function Participants() {
     setParticipants(participants.filter((_, i) => i !== index));
   };
 
+  const downloadTemplate = () => {
+    const csvContent = "Name,Email,Wishlist,Budget\nJohn Doe,john@example.com,Xbox games,$50\nJane Smith,jane@example.com,Books,$50";
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'secret_santa_template.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    const file = acceptedFiles[0];
+    Papa.parse(file, {
+      header: true,
+      complete: (results) => {
+        const parsedParticipants = results.data.map((row: any) => ({
+          username: row.Name || '',
+          email: row.Email || '',
+          wishlist: row.Wishlist || '',
+          budget: row.Budget || (fixedBudget ? globalBudget : ''),
+        })).filter(p => p.username && p.email);
+        setParticipants(parsedParticipants);
+      },
+    });
+  }, [fixedBudget, globalBudget]);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ 
+    onDrop,
+    accept: {
+      'text/csv': ['.csv']
+    },
+    multiple: false 
+  });
+
   const assignSecretSanta = async () => {
     if (participants.length < 2) {
       alert('You need at least 2 participants to start the exchange.');
@@ -80,152 +118,149 @@ export default function Participants() {
         <meta name="keywords" content="Secret Santa, Participants, Gift Exchange, Wishlist, Budget" />
       </Head>
       <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50">
-        <div className="max-w-4xl mx-auto p-8 flex flex-col md:flex-row">
-          <div className="w-full md:w-1/6 bg-gray-100 p-4 rounded-lg shadow-md mb-8 md:mb-0">
-            <h2 className="text-xl font-semibold mb-4">Left Sidebar</h2>
-            <p className="text-gray-700">Additional content can go here...</p>
+        <div className="max-w-4xl mx-auto p-8">
+          <div className="flex justify-between items-center mb-8">
+            <button
+              onClick={() => router.back()}
+              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center gap-2 shadow-md"
+            >
+              <FaSleigh className="text-xl" /> Return
+            </button>
+            <button
+              onClick={downloadTemplate}
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center gap-2 shadow-md"
+            >
+              <FaDownload className="text-xl" /> Download CSV Template
+            </button>
           </div>
-          <div className="flex-1 mx-4">
-            <div className="flex justify-between items-center mb-8">
-              <button
-                onClick={() => router.back()}
-                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center gap-2 shadow-md"
-              >
-                <FaSleigh className="text-xl" /> Return
-              </button>
-            </div>
 
-            <h1 className="text-4xl font-bold mb-12 text-center text-gray-800 flex items-center justify-center gap-4">
-              <FaGift className="text-red-600 text-3xl" />
-              Secret Santa
-              <FaGift className="text-green-600 text-3xl" />
-            </h1>
-            
-            <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
-              <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">Add Participant</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    value={newUsername}
-                    onChange={(e) => setNewUsername(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={newEmail}
-                    onChange={(e) => setNewEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
-                  />
-                </div>
-                <textarea
-                  placeholder="Wishlist"
-                  value={wishlist}
-                  onChange={(e) => setWishlist(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
-                  rows={3}
-                />
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="fixedBudget"
-                      checked={fixedBudget}
-                      onChange={(e) => setFixedBudget(e.target.checked)}
-                      className="w-4 h-4"
-                    />
-                    <label htmlFor="fixedBudget" className="text-gray-700">Fixed Budget</label>
-                  </div>
-                  {fixedBudget ? (
-                    <input
-                      type="text"
-                      placeholder="Global Budget"
-                      value={globalBudget}
-                      onChange={(e) => {
-                        setGlobalBudget(e.target.value);
-                        setParticipants(participants.map(p => ({...p, budget: e.target.value})));
-                      }}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
-                    />
-                  ) : (
-                    <input
-                      type="text"
-                      placeholder="Individual Budget"
-                      value={budget}
-                      onChange={(e) => setBudget(e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
-                    />
-                  )}
-                </div>
-                <button 
-                  type="submit" 
-                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
-                >
-                  <FaGift className="text-xl" /> Submit
-                </button>
-              </form>
-            </div>
+          <h1 className="text-4xl font-bold mb-12 text-center text-gray-800 flex items-center justify-center gap-4">
+            <FaGift className="text-red-600 text-3xl" />
+            Secret Santa
+            <FaGift className="text-green-600 text-3xl" />
+          </h1>
 
-            <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
-              <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">Participant List</h2>
-              <div className="grid gap-6">
-                {participants.map((participant, index) => (
-                  <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-gray-700"><span className="font-semibold">Name:</span> {participant.username}</p>
-                        <p className="text-gray-700"><span className="font-semibold">Email:</span> {participant.email}</p>
-                      </div>
-                      <div>
-                        {participant.wishlist && (
-                          <p className="text-gray-700"><span className="font-semibold">Wishlist:</span> {participant.wishlist}</p>
-                        )}
-                        {participant.budget && (
-                          <p className="text-gray-700"><span className="font-semibold">Budget Range:</span> {participant.budget}</p>
-                        )}
-                      </div>
-                    </div>
-                    <button 
-                      onClick={() => handleDelete(index)}
-                      className="mt-4 bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-200 transition-colors duration-200 flex items-center gap-2"
-                    >
-                      <FaTrash /> Remove
-                    </button>
-                  </div>
-                ))}
-              </div>
-
-              {participants.length >= 2 && (
-                <button
-                  onClick={assignSecretSanta}
-                  disabled={isLoading}
-                  className={`mt-8 w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-3 shadow-md text-lg font-semibold ${
-                    isLoading ? 'opacity-50 cursor-not-allowed' : ''
-                  }`}
-                >
-                  <FaSleigh className="text-2xl" />
-                  {isLoading ? 'Loading...' : 'Start Exchange'}
-                </button>
+          <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">Upload Participants</h2>
+            <div {...getRootProps()} className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-red-400 transition-colors duration-200">
+              <input {...getInputProps()} />
+              <FaUpload className="mx-auto text-3xl text-gray-400 mb-4" />
+              {isDragActive ? (
+                <p className="text-gray-600">Drop the CSV file here...</p>
+              ) : (
+                <p className="text-gray-600">Drag and drop a CSV file here, or click to select one</p>
               )}
             </div>
-
-            <div className="mt-12">
-              <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">Sponsored Ads</h2>
-              <div className="grid gap-6">
-                <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
-                  <p className="text-gray-700">Ad content goes here...</p>
-                </div>
-                <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
-                  <p className="text-gray-700">Ad content goes here...</p>
-                </div>
-              </div>
-            </div>
           </div>
-          <div className="w-full md:w-1/6 bg-gray-100 p-4 rounded-lg shadow-md mt-8 md:mt-0">
-            <h2 className="text-xl font-semibold mb-4">Right Sidebar</h2>
-            <p className="text-gray-700">Additional content can go here...</p>
+          
+          <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">Add Individual Participant</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  value={newUsername}
+                  onChange={(e) => setNewUsername(e.target.value)}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={newEmail}
+                  onChange={(e) => setNewEmail(e.target.value)}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+              <textarea
+                placeholder="Wishlist"
+                value={wishlist}
+                onChange={(e) => setWishlist(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                rows={3}
+              />
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="fixedBudget"
+                    checked={fixedBudget}
+                    onChange={(e) => setFixedBudget(e.target.checked)}
+                    className="w-4 h-4"
+                  />
+                  <label htmlFor="fixedBudget" className="text-gray-700">Fixed Budget</label>
+                </div>
+                {fixedBudget ? (
+                  <input
+                    type="text"
+                    placeholder="Global Budget"
+                    value={globalBudget}
+                    onChange={(e) => {
+                      setGlobalBudget(e.target.value);
+                      setParticipants(participants.map(p => ({...p, budget: e.target.value})));
+                    }}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    placeholder="Individual Budget"
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                  />
+                )}
+              </div>
+              <button 
+                type="submit" 
+                className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
+              >
+                <FaGift className="text-xl" /> Submit
+              </button>
+            </form>
+          </div>
+
+          <div className="bg-white p-8 rounded-xl shadow-xl mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-2xl mb-6 text-center text-gray-800 font-semibold">Participant List</h2>
+            <div className="grid gap-6">
+              {participants.map((participant, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-gray-700"><span className="font-semibold">Name:</span> {participant.username}</p>
+                      <p className="text-gray-700"><span className="font-semibold">Email:</span> {participant.email}</p>
+                    </div>
+                    <div>
+                      {participant.wishlist && (
+                        <p className="text-gray-700"><span className="font-semibold">Wishlist:</span> {participant.wishlist}</p>
+                      )}
+                      {participant.budget && (
+                        <p className="text-gray-700"><span className="font-semibold">Budget Range:</span> {participant.budget}</p>
+                      )}
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => handleDelete(index)}
+                    className="mt-4 bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-200 transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <FaTrash /> Remove
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {participants.length >= 2 && (
+              <button
+                onClick={assignSecretSanta}
+                disabled={isLoading}
+                className={`mt-8 w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-3 shadow-md text-lg font-semibold ${
+                  isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                <FaSleigh className="text-2xl" />
+                {isLoading ? 'Loading...' : 'Start Exchange'}
+              </button>
+            )}
           </div>
         </div>
       </div>

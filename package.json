@@ -16,14 +16,17 @@
     "next-i18next": "^15.3.1",
     "next-intl": "^3.23.5",
     "nodemailer": "^6.9.16",
+    "papaparse": "^5.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-dropzone": "^14.2.10",
     "react-i18next": "^15.1.0",
     "react-icons": "^5.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.16",
+    "@types/papaparse": "^5.3.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-i18next": "^7.8.3",
