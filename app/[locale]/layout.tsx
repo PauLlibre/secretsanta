@@ -53,32 +53,29 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export async function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'es' }, { locale: 'cat' }, { locale: 'fr' }, { locale: 'it' }];
-}
-
 export default async function LocaleLayout(
     props: Promise<{ children: React.ReactNode; params: { locale: string } }>
-): Promise<JSX.Element> {
-  const { children, params } = await props;
-  let messages;
-  try {
-    messages = (await import(`../../messages/${params.locale}.json`)).default;
-  } catch {
-    notFound();
+  ): Promise<JSX.Element> {
+    const { children, params } = await props;
+  
+    let messages;
+    try {
+      messages = (await import(`../../messages/${params.locale}.json`)).default;
+    } catch {
+      notFound();
+    }
+  
+    return (
+      <html lang={params.locale} className={comicNeue.variable}>
+        <body className="antialiased min-h-screen flex flex-col">
+          <NextIntlClientProvider locale={params.locale} messages={messages}>
+            <div className="fixed top-0 right-0 p-4 sm:p-6 z-50">
+              <LanguageSwitcher />
+            </div>
+            <main className="flex-grow">{children}</main>
+            <Analytics />
+          </NextIntlClientProvider>
+        </body>
+      </html>
+    );
   }
-
-  return (
-    <html lang={params.locale} className={comicNeue.variable}>
-      <body className="antialiased min-h-screen flex flex-col">
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
-          <div className="fixed top-0 right-0 p-4 sm:p-6 z-50">
-            <LanguageSwitcher />
-          </div>
-          <main className="flex-grow">{children}</main>
-          <Analytics />
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
-}

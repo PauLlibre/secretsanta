@@ -1,11 +1,14 @@
 import { setRequestLocale } from 'next-intl/server';
 import HolidayActivitiesContent from './components/HolidayActivitiesContent';
 
-export default function HolidayActivities({
-  params,
-}: {
+interface HolidayActivitiesProps {
   params: { locale: string };
-}): JSX.Element {
+}
+
+export default async function HolidayActivities(
+  props: Promise<HolidayActivitiesProps>
+): Promise<JSX.Element> {
+  const { params } = await props;
   setRequestLocale(params.locale);
 
   return <HolidayActivitiesContent />;
