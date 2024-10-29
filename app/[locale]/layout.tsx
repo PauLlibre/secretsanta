@@ -15,12 +15,7 @@ const comicNeue = Comic_Neue({
   subsets: ['latin'],
 });
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const { locale } = params;
+export async function generateMetadata(): Promise<Metadata> {
   try {
     const t = await getTranslations('metadata');
 
