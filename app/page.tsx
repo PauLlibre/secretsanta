@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { FaGift, FaSleigh } from "react-icons/fa";
 import Head from "next/head";
+import Faqs from "./components/faqs";
 
 export default function Home() {
   const router = useRouter();
@@ -144,6 +145,9 @@ export default function Home() {
               </ol>
             </section>
           </div>
+
+          <Faqs />
+          
         </main>
         <footer className="py-8 text-center text-gray-600 border-t border-gray-200">
           <div className="max-w-5xl mx-auto px-4">
