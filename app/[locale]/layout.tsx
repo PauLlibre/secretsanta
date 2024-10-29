@@ -62,11 +62,10 @@ interface LayoutProps {
   params: Promise<{ locale: string }>;
 }
 
-export default async function LocaleLayout({
-  children,
-  params: paramsPromise,
-}: LayoutProps): Promise<JSX.Element> {
-  const params = await paramsPromise;
+export default async function LocaleLayout(
+    props: Promise<{ children: React.ReactNode; params: { locale: string } }>
+): Promise<JSX.Element> {
+  const { children, params } = await props;
   let messages;
   try {
     messages = (await import(`../../messages/${params.locale}.json`)).default;
