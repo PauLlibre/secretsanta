@@ -13,10 +13,24 @@ import Head from "next/head";
 import { useDropzone } from "react-dropzone";
 import Papa from "papaparse";
 
+interface Participant {
+  username: string;
+  email: string;
+  wishlist: string;
+  budget: string;
+}
+
+interface CSVRow {
+  Name?: string;
+  Email?: string;
+  Wishlist?: string;
+  Budget?: string;
+}
+
 export default function Participants() {
   const router = useRouter();
 
-  const [participants, setParticipants] = useState([
+  const [participants, setParticipants] = useState<Participant[]>([
     { username: "user1", email: "user1@example.com", wishlist: "", budget: "" },
   ]);
 
@@ -72,8 +86,8 @@ export default function Participants() {
       Papa.parse(file, {
         header: true,
         complete: (results) => {
-          const parsedParticipants = results.data
-            .map((row: any) => ({
+          const parsedParticipants = (results.data as CSVRow[])
+            .map((row) => ({
               username: row.Name || "",
               email: row.Email || "",
               wishlist: row.Wishlist || "",
