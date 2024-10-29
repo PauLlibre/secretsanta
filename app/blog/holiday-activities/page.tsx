@@ -82,7 +82,7 @@ export default function HolidayActivities() {
                 <FaSnowman className="text-blue-600" aria-hidden="true" /> Build a Snowman
               </h2>
               <p className="text-gray-700 mb-4">
-                Embrace the snowy weather by building a snowman. Don't forget the carrot nose and cozy scarf!
+                Embrace the snowy weather by building a snowman. Don&apos;t forget the carrot nose and cozy scarf!
               </p>
               <div className="relative w-full aspect-square">
                 <Image
@@ -150,7 +150,7 @@ export default function HolidayActivities() {
                 <FaFilm className="text-green-500" aria-hidden="true" /> Watch Holiday Movies
               </h2>
               <p className="text-gray-700 mb-4">
-                Cozy up with classic holiday movies. From heartwarming tales to comedic adventures, there's something for everyone.
+                Cozy up with classic holiday movies. From heartwarming tales to comedic adventures, there&apos;s something for everyone.
               </p>
               <div className="relative w-full aspect-square">
                 <Image
