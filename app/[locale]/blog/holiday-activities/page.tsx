@@ -6,10 +6,9 @@ interface HolidayActivitiesProps {
 }
 
 export default async function HolidayActivities(
-  props: Promise<HolidayActivitiesProps>
+  props: HolidayActivitiesProps
 ): Promise<JSX.Element> {
-  const { params } = await props;
-  setRequestLocale(params.locale);
+  setRequestLocale(props.params.locale);
 
   return <HolidayActivitiesContent />;
 }
