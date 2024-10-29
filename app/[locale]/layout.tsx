@@ -20,7 +20,7 @@ export async function generateMetadata({
 }: { 
   params: { locale: string } 
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale } = params;
   try {
     const t = await getTranslations({ locale, namespace: 'metadata' });
     
@@ -69,18 +69,17 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const { locale } = await params;
   let messages;
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    messages = (await import(`../../messages/${params.locale}.json`)).default;
   } catch {
     notFound();
   }
 
   return (
-    <html lang={locale} className={comicNeue.variable}>
+    <html lang={params.locale} className={comicNeue.variable}>
       <body className="antialiased min-h-screen flex flex-col">
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={params.locale} messages={messages}>
           <div className="fixed top-0 right-0 p-4 sm:p-6 z-50">
             <LanguageSwitcher />
           </div>
