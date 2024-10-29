@@ -1,3 +1,5 @@
+"use client";
+
 import { FaTree, FaSnowman, FaCookieBite, FaSleigh, FaGifts, FaMusic, FaFilm } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

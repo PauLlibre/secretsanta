@@ -162,7 +162,7 @@ export default function Participants() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 mb-8">
             <button
-              onClick={() => router.back()}
+              onClick={() => router.push("/")}
               className="w-full sm:w-auto bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md text-sm sm:text-base"
             >
               <FaSleigh className="text-lg sm:text-xl" /> {t('form.back')}
