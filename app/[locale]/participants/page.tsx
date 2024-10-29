@@ -12,6 +12,8 @@ import {
 import Head from "next/head";
 import { useDropzone } from "react-dropzone";
 import Papa from "papaparse";
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 interface Participant {
   username: string;
@@ -29,6 +31,9 @@ interface CSVRow {
 
 export default function Participants() {
   const router = useRouter();
+  const params = useParams();
+  const t = useTranslations('participants');
+  const commonT = useTranslations('common');
 
   const [participants, setParticipants] = useState<Participant[]>([
     { username: "user1", email: "user1@example.com", wishlist: "", budget: "" },
@@ -117,12 +122,15 @@ export default function Participants() {
 
     setIsLoading(true);
     try {
-      const response = await fetch("/api/assign", {
+      const response = await fetch("/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ participants }),
+        body: JSON.stringify({ 
+          participants,
+          locale: params.locale
+        }),
       });
 
       if (!response.ok) throw new Error("Failed to assign Secret Santa");
@@ -139,7 +147,7 @@ export default function Participants() {
   return (
     <>
       <Head>
-        <title>Secret Santa Participants</title>
+        <title>{t('title')}</title>
         <meta
           name="description"
           content="Add and manage participants for your Secret Santa exchange. Ensure everyone has a wishlist and budget set for a fun and organized gift exchange."
@@ -150,75 +158,71 @@ export default function Participants() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50">
-        <div className="max-w-4xl mx-auto p-4 sm:p-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-8">
+      <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50 pt-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 mb-8">
             <button
               onClick={() => router.back()}
-              className="w-full sm:w-auto bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
+              className="w-full sm:w-auto bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md text-sm sm:text-base"
             >
-              <FaSleigh className="text-xl" /> Return
+              <FaSleigh className="text-lg sm:text-xl" /> {t('form.back')}
             </button>
             <button
               onClick={downloadTemplate}
-              className="w-full sm:w-auto bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
+              className="w-full sm:w-auto bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md text-sm sm:text-base"
             >
-              <FaDownload className="text-xl" /> Download CSV Template
+              <FaDownload className="text-lg sm:text-xl" /> {t('template.download')}
             </button>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-gray-800 flex items-center justify-center gap-4">
-            <FaGift className="text-red-600 text-2xl sm:text-3xl" />
-            Secret Santa
-            <FaGift className="text-green-600 text-2xl sm:text-3xl" />
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-12 text-center text-gray-800 flex items-center justify-center gap-3 sm:gap-4">
+            <FaGift className="text-red-600 text-xl sm:text-2xl md:text-3xl" />
+            {t('title')}
+            <FaGift className="text-green-600 text-xl sm:text-2xl md:text-3xl" />
           </h1>
 
-          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-xl mb-8 sm:mb-12 backdrop-blur-sm bg-opacity-90">
-            <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
-              Upload Participants
+          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-xl mb-6 sm:mb-8 md:mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
+              {t('template.download')}
             </h2>
             <div
               {...getRootProps()}
-              className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-8 text-center cursor-pointer hover:border-red-400 transition-colors duration-200"
+              className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 md:p-8 text-center cursor-pointer hover:border-red-400 transition-colors duration-200"
             >
               <input {...getInputProps()} />
-              <FaUpload className="mx-auto text-2xl sm:text-3xl text-gray-400 mb-4" />
-              {isDragActive ? (
-                <p className="text-sm sm:text-base text-gray-600">Drop the CSV file here...</p>
-              ) : (
-                <p className="text-sm sm:text-base text-gray-600">
-                  Drag and drop a CSV file here, or click to select one
-                </p>
-              )}
+              <FaUpload className="mx-auto text-xl sm:text-2xl md:text-3xl text-gray-400 mb-3 sm:mb-4" />
+              <p className="text-sm sm:text-base text-gray-600">
+                {isDragActive ? t('template.dropzone') : t('template.dropzone')}
+              </p>
             </div>
           </div>
 
-          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-xl mb-8 sm:mb-12 backdrop-blur-sm bg-opacity-90">
-            <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
-              Add Individual Participant
+          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-xl mb-6 sm:mb-8 md:mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
+              {t('title')}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder={t('form.name')}
                   value={newUsername}
                   onChange={(e) => setNewUsername(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                 />
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder={t('form.email')}
                   value={newEmail}
                   onChange={(e) => setNewEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                 />
               </div>
               <textarea
-                placeholder="Wishlist"
+                placeholder={t('form.wishlist')}
                 value={wishlist}
                 onChange={(e) => setWishlist(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                 rows={3}
               />
               <div className="space-y-4">
@@ -231,13 +235,13 @@ export default function Participants() {
                     className="w-4 h-4"
                   />
                   <label htmlFor="fixedBudget" className="text-sm sm:text-base text-gray-700">
-                    Fixed Budget
+                    {t('form.fixedBudget')}
                   </label>
                 </div>
                 {fixedBudget ? (
                   <input
                     type="text"
-                    placeholder="Global Budget"
+                    placeholder={t('form.globalBudget')}
                     value={globalBudget}
                     onChange={(e) => {
                       setGlobalBudget(e.target.value);
@@ -248,30 +252,30 @@ export default function Participants() {
                         }))
                       );
                     }}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                   />
                 ) : (
                   <input
                     type="text"
-                    placeholder="Individual Budget"
+                    placeholder={t('form.individualBudget')}
                     value={budget}
                     onChange={(e) => setBudget(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                   />
                 )}
               </div>
               <button
                 type="submit"
-                className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
+                className="w-full bg-red-600 text-white py-2 sm:py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md text-sm sm:text-base"
               >
-                <FaGift className="text-xl" /> Submit
+                <FaGift className="text-lg sm:text-xl" /> {t('form.submit')}
               </button>
             </form>
           </div>
 
-          <div className="bg-white p-4 sm:p-8 rounded-xl shadow-xl mb-8 sm:mb-12 backdrop-blur-sm bg-opacity-90">
-            <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
-              Participant List
+          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-xl mb-6 sm:mb-8 md:mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 text-center text-gray-800 font-semibold">
+              {t('list.title')}
             </h2>
             <div className="grid gap-4 sm:gap-6">
               {participants.map((participant, index) => (
@@ -282,24 +286,24 @@ export default function Participants() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <p className="text-sm sm:text-base text-gray-700">
-                        <span className="font-semibold">Name:</span>{" "}
+                        <span className="font-semibold">{t('form.name')}:</span>{" "}
                         {participant.username}
                       </p>
                       <p className="text-sm sm:text-base text-gray-700">
-                        <span className="font-semibold">Email:</span>{" "}
+                        <span className="font-semibold">{t('form.email')}:</span>{" "}
                         {participant.email}
                       </p>
                     </div>
                     <div>
                       {participant.wishlist && (
                         <p className="text-sm sm:text-base text-gray-700">
-                          <span className="font-semibold">Wishlist:</span>{" "}
+                          <span className="font-semibold">{t('form.wishlist')}:</span>{" "}
                           {participant.wishlist}
                         </p>
                       )}
                       {participant.budget && (
                         <p className="text-sm sm:text-base text-gray-700">
-                          <span className="font-semibold">Budget Range:</span>{" "}
+                          <span className="font-semibold">{t('form.individualBudget')}:</span>{" "}
                           {participant.budget}
                         </p>
                       )}
@@ -307,7 +311,7 @@ export default function Participants() {
                   </div>
                   <button
                     onClick={() => handleDelete(index)}
-                    className="mt-4 bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-200 transition-colors duration-200 flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start"
+                    className="mt-4 bg-red-100 text-red-600 px-3 sm:px-4 py-2 rounded-lg hover:bg-red-200 transition-colors duration-200 flex items-center gap-2 w-full sm:w-auto justify-center text-sm sm:text-base"
                   >
                     <FaTrash /> Remove
                   </button>
@@ -319,22 +323,22 @@ export default function Participants() {
               <button
                 onClick={assignSecretSanta}
                 disabled={isLoading}
-                className={`mt-6 sm:mt-8 w-full bg-green-600 text-white py-3 sm:py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-3 shadow-md text-base sm:text-lg font-semibold ${
+                className={`mt-6 sm:mt-8 w-full bg-green-600 text-white py-3 sm:py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3 shadow-md text-sm sm:text-base md:text-lg font-semibold ${
                   isLoading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
-                <FaSleigh className="text-xl sm:text-2xl" />
-                {isLoading ? "Loading..." : "Start Exchange"}
+                <FaSleigh className="text-lg sm:text-xl md:text-2xl" />
+                {isLoading ? t('list.loading') : t('list.startExchange')}
               </button>
             )}
           </div>
         </div>
       </div>
-      <footer className="py-8 text-center text-gray-600 border-t border-gray-200">
-          <div className="max-w-5xl mx-auto px-4">
-            &copy; {new Date().getFullYear()} Easy Secret Santa. All rights reserved.
-          </div>
-        </footer>
+      <footer className="py-6 sm:py-8 text-center text-gray-600 text-sm sm:text-base border-t border-gray-200">
+        <div className="max-w-5xl mx-auto px-4">
+          {commonT('copyright', { year: new Date().getFullYear() })}
+        </div>
+      </footer>
     </>
   );
 }

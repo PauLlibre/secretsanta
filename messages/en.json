@@ -1,0 +1,213 @@
+{
+  "home": {
+    "title": "Easy Secret Santa - Organize Your Holiday Gift Exchange Effortlessly",
+    "subtitle": {
+      "easy": "Easy",
+      "secretSanta": "Secret Santa"
+    },
+    "description": "Organize your Secret Santa gift exchange effortlessly! Set up participants, manage wishlists, and let us handle the random assignments. Perfect for families, friends, and office celebrations.",
+    "buttons": {
+      "startExchange": "Start Exchange",
+      "holidayActivities": "Holiday Activities"
+    },
+    "features": {
+      "title": "Why Choose Easy Secret Santa?",
+      "list": {
+        "interface": "Simple and intuitive interface",
+        "assignments": "Automatic gift assignments",
+        "wishlists": "Manage wishlists and budgets",
+        "groupSize": "Perfect for any group size"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": {
+        "step1": "Enter the names and emails of participants",
+        "step2": "Set up wishlists and budgets",
+        "step3": "We randomly assign gift givers",
+        "step4": "Participants receive their assignments via email"
+      }
+    }
+  },
+  "participants": {
+    "title": "Add Individual Participant",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "wishlist": "Wishlist",
+      "fixedBudget": "Fixed Budget",
+      "globalBudget": "Global Budget",
+      "individualBudget": "Individual Budget",
+      "submit": "Submit",
+      "back": "Back"
+    },
+    "list": {
+      "title": "Participant List",
+      "startExchange": "Start Exchange",
+      "loading": "Loading..."
+    },
+    "template": {
+      "download": "Download Template",
+      "dropzone": "Drop CSV file here or click to upload"
+    }
+  },
+  "done": {
+    "title": "Secret Santa Exchange Complete - Share the Holiday Joy!",
+    "congratulations": "Secret Santa Completed!",
+    "description": "Congratulations! Your Secret Santa gift exchange was a success. Spread the holiday cheer by sharing your experience with others!",
+    "share": {
+      "whatsapp": "Share on WhatsApp",
+      "facebook": "Share on Facebook",
+      "twitter": "Share on Twitter"
+    },
+    "buttons": {
+      "startOver": "Start Over",
+      "organizeAnother": "Organize Another Exchange",
+      "holidayActivities": "Holiday Activities"
+    },
+    "metadata": {
+      "title": "Secret Santa Exchange Complete - Share the Holiday Joy!",
+      "description": "Your Secret Santa gift exchange was completed successfully. Share the holiday joy with others!",
+      "og": {
+        "title": "Secret Santa Exchange Complete!",
+        "description": "Your Secret Santa gift exchange was completed successfully. Share the holiday joy!",
+        "imageAlt": "Secret Santa Exchange Complete"
+      },
+      "twitter": {
+        "title": "Secret Santa Exchange Complete!",
+        "description": "Your Secret Santa gift exchange was completed successfully!"
+      }
+    },
+    "common": {
+      "copyright": "© {year} Easy Secret Santa. All rights reserved."
+    }   
+  },
+  "holidayActivities": {
+    "title": "Fun Holiday Activities",
+    "activities": {
+      "decorateTree": {
+        "title": "Decorate the Tree",
+        "description": "Gather around and bring the holiday spirit to life by decorating the Christmas tree with lights, ornaments, and tinsel."
+      },
+      "bakeCookies": {
+        "title": "Bake Cookies",
+        "description": "Whip up some delicious holiday cookies. Get creative with shapes, decorations, and flavors that everyone will enjoy."
+      },
+      "buildSnowman": {
+        "title": "Build a Snowman",
+        "description": "Embrace the snowy weather by building a snowman. Don't forget the carrot nose and cozy scarf!"
+      },
+      "goSledding": {
+        "title": "Go Sledding",
+        "description": "Hit the slopes for some sledding fun. Feel the rush as you slide down snowy hills with friends and family."
+      },
+      "exchangeGifts": {
+        "title": "Exchange Gifts",
+        "description": "Organize a gift exchange with loved ones. Share joy and surprises through thoughtful presents."
+      },
+      "singCarols": {
+        "title": "Sing Carols",
+        "description": "Spread cheer by singing holiday carols. Gather a group and bring joy to your neighborhood with festive songs."
+      },
+      "watchMovies": {
+        "title": "Watch Holiday Movies",
+        "description": "Cozy up with classic holiday movies. From heartwarming tales to comedic adventures, there's something for everyone."
+      },
+      "christmasMarket": {
+        "title": "Visit a Christmas Market",
+        "description": "Explore a local Christmas market. Enjoy festive foods, handcrafted gifts, and the warm holiday atmosphere."
+      }
+    },
+    "buttons": {
+      "returnHome": "Return Home"
+    }
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "questions": {
+      "assignments": {
+        "title": "How do assignments work?",
+        "answer": "Assignments are made randomly and automatically, ensuring no one gets their own name and everyone has someone to gift to."
+      },
+      "security": {
+        "title": "Is my exchange secure?",
+        "answer": "Yes, your information is secure. We use end-to-end encryption and never share your data with third parties."
+      },
+      "budget": {
+        "title": "How do I manage the budget?",
+        "answer": "You can set a fixed budget for the entire group or allow individual budgets. The system will ensure everyone knows the limits."
+      },
+      "participants": {
+        "title": "How many participants can I add?",
+        "answer": "You can add as many participants as you want. The system is designed to handle groups of any size."
+      },
+      "emails": {
+        "title": "How do email notifications work?",
+        "answer": "Each participant will receive an email with their secret assignment and all necessary information to participate."
+      },
+      "multiple": {
+        "title": "Can I organize multiple exchanges?",
+        "answer": "Yes, you can organize as many exchanges as you want. Each exchange is managed independently."
+      }
+    }
+  },
+  "common": {
+    "copyright": "© {year} Easy Secret Santa. All rights reserved."
+  },
+  "metadata": {
+    "title": "Easy Secret Santa - Organize Your Holiday Gift Exchange",
+    "description": "Easily organize your Secret Santa gift exchange. A fun and simple way to manage holiday gift exchanges.",
+    "keywords": "Secret Santa, gift exchange, holiday gift organizer, Christmas exchange, online Secret Santa, family gift exchange, easy gift coordination",
+    "og": {
+      "title": "Easy Secret Santa - Organize Your Holiday Gift Exchange",
+      "description": "Easily organize your Secret Santa gift exchange. A fun and simple way to manage holiday gift exchanges.",
+      "imageAlt": "Easy Secret Santa"
+    },
+    "twitter": {
+      "title": "Easy Secret Santa - Organize Your Holiday Gift Exchange",
+      "description": "Easily organize your Secret Santa gift exchange",
+      "site": "@easysecretsanta",
+      "creator": "@easysecretsanta"
+    }
+  },
+  "email": {
+    "subject": "🎁 Your Secret Santa Assignment!",
+    "header": "🎄 Secret Santa Assignment 🎅",
+    "greeting": "Ho Ho Ho {name}! 🎅",
+    "assignmentIntro": "You are the Secret Santa for:",
+    "contactInfo": "Contact:",
+    "wishlistLabel": "Wishlist:",
+    "budgetLabel": "Budget range:",
+    "footer": "Remember to keep it a secret and spread the joy! 🎁✨",
+    "error": "Error sending emails",
+    "success": "Emails sent successfully!"
+  },
+  "page": {
+    "title": "Organize Your Secret Santa",
+    "description": "Create and manage your Secret Santa exchange easily and fun",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Operation completed successfully",
+    "buttons": {
+      "back": "Back",
+      "next": "Next",
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit"
+    },
+    "metadata": {
+      "title": "Organize Your Secret Santa",
+      "description": "Create and manage your Secret Santa exchange easily and fun",
+      "og": {
+        "title": "Organize Your Secret Santa",
+        "description": "Create and manage your Secret Santa exchange easily and fun",
+        "imageAlt": "Secret Santa Page"
+      },
+      "twitter": {
+        "title": "Organize Your Secret Santa",
+        "description": "Create and manage your Secret Santa exchange easily and fun"
+      }
+    }
+  }
+}

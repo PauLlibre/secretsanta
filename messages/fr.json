@@ -1,0 +1,213 @@
+{
+  "home": {
+    "title": "Easy Secret Santa - Organisez votre échange de cadeaux",
+    "subtitle": {
+      "easy": "Facile",
+      "secretSanta": "Secret Santa"
+    },
+    "description": "Organisez facilement votre échange de cadeaux Secret Santa. Une façon amusante et simple de gérer les échanges de cadeaux de Noël.",
+    "buttons": {
+      "startExchange": "Commencer l'Échange",
+      "holidayActivities": "Activités de Noël"
+    },
+    "features": {
+      "title": "Pourquoi choisir Easy Secret Santa ?",
+      "list": {
+        "interface": "Interface facile à utiliser",
+        "assignments": "Attributions aléatoires",
+        "wishlists": "Gestion des listes de souhaits",
+        "groupSize": "Groupes de toute taille"
+      }
+    },
+    "howItWorks": {
+      "title": "Comment ça marche",
+      "steps": {
+        "step1": "Ajoutez des participants",
+        "step2": "Définissez le budget",
+        "step3": "Personnalisez les listes de souhaits",
+        "step4": "Envoyez les attributions"
+      }
+    }
+  },
+  "participants": {
+    "title": "Ajouter un Participant",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "wishlist": "Liste de souhaits",
+      "fixedBudget": "Budget Fixe",
+      "globalBudget": "Budget Global",
+      "individualBudget": "Budget Individuel",
+      "submit": "Envoyer",
+      "back": "Retour"
+    },
+    "list": {
+      "title": "Liste des Participants",
+      "startExchange": "Commencer l'Échange",
+      "loading": "Chargement..."
+    },
+    "template": {
+      "download": "Télécharger le Modèle",
+      "dropzone": "Déposez le fichier CSV ici ou cliquez pour télécharger"
+    }
+  },
+  "done": {
+    "title": "Échange Secret Santa Terminé - Partagez la Joie de Noël !",
+    "congratulations": "Secret Santa Terminé !",
+    "description": "Félicitations ! Votre échange Secret Santa est un succès. Partagez la joie de Noël avec les autres !",
+    "share": {
+      "whatsapp": "Partager sur WhatsApp",
+      "facebook": "Partager sur Facebook",
+      "twitter": "Partager sur Twitter"
+    },
+    "buttons": {
+      "startOver": "Recommencer",
+      "organizeAnother": "Organiser un Autre Échange",
+      "holidayActivities": "Activités de Noël"
+    },
+    "metadata": {
+      "title": "Échange Secret Santa Terminé - Partagez la Joie de Noël !",
+      "description": "Votre échange Secret Santa est terminé avec succès. Partagez la joie de Noël avec les autres !",
+      "og": {
+        "title": "Échange Secret Santa Terminé !",
+        "description": "Votre échange Secret Santa est terminé avec succès. Partagez la joie de Noël !",
+        "imageAlt": "Échange Secret Santa Terminé"
+      },
+      "twitter": {
+        "title": "Échange Secret Santa Terminé !",
+        "description": "Votre échange Secret Santa est terminé avec succès !"
+      }
+    },
+    "common": {
+      "copyright": "© {year} Easy Secret Santa. Tous droits réservés."
+    }
+  },
+  "holidayActivities": {
+    "title": "Activités de Noël Amusantes",
+    "activities": {
+      "decorateTree": {
+        "title": "Décorer le Sapin",
+        "description": "Rassemblez-vous et donnez vie à l'esprit de Noël en décorant le sapin avec des lumières, des ornements et des guirlandes."
+      },
+      "bakeCookies": {
+        "title": "Faire des Biscuits",
+        "description": "Préparez de délicieux biscuits de Noël. Soyez créatif avec les formes, les décorations et les saveurs que tout le monde appréciera."
+      },
+      "buildSnowman": {
+        "title": "Construire un Bonhomme de Neige",
+        "description": "Profitez de la neige en construisant un bonhomme de neige. N'oubliez pas le nez en carotte et l'écharpe douillette !"
+      },
+      "goSledding": {
+        "title": "Faire de la Luge",
+        "description": "Allez sur les pentes pour vous amuser en luge. Ressentez l'excitation en glissant sur les collines enneigées avec amis et famille."
+      },
+      "exchangeGifts": {
+        "title": "Échanger des Cadeaux",
+        "description": "Organisez un échange de cadeaux avec vos proches. Partagez la joie et les surprises à travers des cadeaux réfléchis."
+      },
+      "singCarols": {
+        "title": "Chanter des Chants de Noël",
+        "description": "Répandez la joie en chantant des chants de Noël. Rassemblez un groupe et apportez de la joie à votre quartier avec des chansons festives."
+      },
+      "watchMovies": {
+        "title": "Regarder des Films de Noël",
+        "description": "Détendez-vous avec des films de Noël classiques. Des histoires émouvantes aux aventures comiques, il y en a pour tous les goûts."
+      },
+      "christmasMarket": {
+        "title": "Visiter un Marché de Noël",
+        "description": "Explorez un marché de Noël local. Profitez de la nourriture festive, des cadeaux artisanaux et de l'ambiance chaleureuse de Noël."
+      }
+    },
+    "buttons": {
+      "returnHome": "Retour à l'Accueil"
+    }
+  },
+  "faqs": {
+    "title": "Questions Fréquentes",
+    "questions": {
+      "assignments": {
+        "title": "Comment fonctionnent les attributions ?",
+        "answer": "Les attributions sont faites de manière aléatoire et automatique, en s'assurant que personne ne reçoive son propre nom et que chacun ait quelqu'un à qui offrir."
+      },
+      "security": {
+        "title": "Mon échange est-il sécurisé ?",
+        "answer": "Oui, vos informations sont sécurisées. Nous utilisons un chiffrement de bout en bout et ne partageons jamais vos données avec des tiers."
+      },
+      "budget": {
+        "title": "Comment gérer le budget ?",
+        "answer": "Vous pouvez définir un budget fixe pour tout le groupe ou autoriser des budgets individuels. Le système s'assurera que tout le monde connaît les limites."
+      },
+      "participants": {
+        "title": "Combien de participants puis-je ajouter ?",
+        "answer": "Vous pouvez ajouter autant de participants que vous le souhaitez. Le système est conçu pour gérer des groupes de toute taille."
+      },
+      "emails": {
+        "title": "Comment fonctionnent les notifications par email ?",
+        "answer": "Chaque participant recevra un email avec son attribution secrète et toutes les informations nécessaires pour participer."
+      },
+      "multiple": {
+        "title": "Puis-je organiser plusieurs échanges ?",
+        "answer": "Oui, vous pouvez organiser autant d'échanges que vous le souhaitez. Chaque échange est géré indépendamment."
+      }
+    }
+  },
+  "common": {
+    "copyright": "© {year} Easy Secret Santa. Tous droits réservés."
+  },
+  "metadata": {
+    "title": "Easy Secret Santa - Organisez votre échange de cadeaux",
+    "description": "Organisez facilement votre échange de cadeaux Secret Santa. Une façon amusante et simple de gérer les échanges de cadeaux de Noël.",
+    "keywords": "Secret Santa, échange de cadeaux, organisateur de cadeaux de Noël, échange de Noël, Secret Santa en ligne, échange familial de cadeaux, coordination facile de cadeaux",
+    "og": {
+      "title": "Easy Secret Santa - Organisez votre échange de cadeaux",
+      "description": "Organisez facilement votre échange de cadeaux Secret Santa. Une façon amusante et simple de gérer les échanges de cadeaux de Noël.",
+      "imageAlt": "Easy Secret Santa"
+    },
+    "twitter": {
+      "title": "Easy Secret Santa - Organisez votre échange de cadeaux",
+      "description": "Organisez facilement votre échange de cadeaux Secret Santa",
+      "site": "@easysecretsanta",
+      "creator": "@easysecretsanta"
+    }
+  },
+  "email": {
+    "subject": "🎁 Votre Attribution Secret Santa !",
+    "header": "🎄 Attribution Secret Santa 🎅",
+    "greeting": "Ho Ho Ho {name} ! 🎅",
+    "assignmentIntro": "Vous êtes le Secret Santa de :",
+    "contactInfo": "Contact :",
+    "wishlistLabel": "Liste de souhaits :",
+    "budgetLabel": "Fourchette de budget :",
+    "footer": "N'oubliez pas de garder le secret et de répandre la joie ! 🎁✨",
+    "error": "Erreur lors de l'envoi des emails",
+    "success": "Emails envoyés avec succès !"
+  },
+  "page": {
+    "title": "Organisez votre Secret Santa",
+    "description": "Créez et gérez votre échange Secret Santa facilement et de manière amusante",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Opération réussie",
+    "buttons": {
+      "back": "Retour",
+      "next": "Suivant",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "edit": "Modifier"
+    },
+    "metadata": {
+      "title": "Organisez votre Secret Santa",
+      "description": "Créez et gérez votre échange Secret Santa facilement et de manière amusante",
+      "og": {
+        "title": "Organisez votre Secret Santa",
+        "description": "Créez et gérez votre échange Secret Santa facilement et de manière amusante",
+        "imageAlt": "Page Secret Santa"
+      },
+      "twitter": {
+        "title": "Organisez votre Secret Santa",
+        "description": "Créez et gérez votre échange Secret Santa facilement et de manière amusante"
+      }
+    }
+  }
+}

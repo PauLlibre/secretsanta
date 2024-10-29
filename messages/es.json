@@ -1,0 +1,213 @@
+{
+  "home": {
+    "title": "Easy Secret Santa - Organiza tu Intercambio de Regalos sin Esfuerzo",
+    "subtitle": {
+      "easy": "Fácil", 
+      "secretSanta": "Amigo Secreto"
+    },
+    "description": "¡Organiza tu intercambio de Amigo Secreto sin esfuerzo! Configura participantes, gestiona listas de deseos y deja que nosotros nos encarguemos de las asignaciones aleatorias. Perfecto para familias, amigos y celebraciones de oficina.",
+    "buttons": {
+      "startExchange": "Comenzar Intercambio",
+      "holidayActivities": "Actividades Navideñas"
+    },
+    "features": {
+      "title": "¿Por qué elegir Easy Secret Santa?",
+      "list": {
+        "interface": "Interfaz simple e intuitiva",
+        "assignments": "Asignaciones automáticas de regalos",
+        "wishlists": "Gestiona listas de deseos y presupuestos",
+        "groupSize": "Perfecto para grupos de cualquier tamaño"
+      }
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona",
+      "steps": {
+        "step1": "Ingresa los nombres y correos de los participantes",
+        "step2": "Configura listas de deseos y presupuestos",
+        "step3": "Asignamos aleatoriamente los regaladores",
+        "step4": "Los participantes reciben sus asignaciones por correo"
+      }
+    }
+  },
+  "participants": {
+    "title": "Agregar Participante Individual",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "wishlist": "Lista de Deseos",
+      "fixedBudget": "Presupuesto Fijo",
+      "globalBudget": "Presupuesto Global",
+      "individualBudget": "Presupuesto Individual",
+      "submit": "Enviar",
+      "back": "Volver"
+    },
+    "list": {
+      "title": "Lista de Participantes",
+      "startExchange": "Comenzar Intercambio",
+      "loading": "Cargando..."
+    },
+    "template": {
+      "download": "Descargar Plantilla",
+      "dropzone": "Suelta el archivo CSV aquí o haz clic para subir"
+    }
+  },
+  "done": {
+    "title": "¡Intercambio de Amigo Secreto Completado - ¡Comparte la Alegría Navideña!",
+    "congratulations": "¡Amigo Secreto Completado!",
+    "description": "¡Felicitaciones! Tu intercambio de Amigo Secreto fue un éxito. ¡Comparte la alegría navideña con otros!",
+    "share": {
+      "whatsapp": "Compartir en WhatsApp",
+      "facebook": "Compartir en Facebook",
+      "twitter": "Compartir en Twitter"
+    },
+    "buttons": {
+      "startOver": "Comenzar de Nuevo",
+      "organizeAnother": "Organizar Otro Intercambio",
+      "holidayActivities": "Actividades Navideñas"
+    },
+    "metadata": {
+      "title": "Intercambio de Amigo Secreto Completado - ¡Comparte la Alegría Navideña!",
+      "description": "Tu intercambio de Amigo Secreto se ha completado con éxito. ¡Comparte la alegría navideña con otros!",
+      "og": {
+        "title": "¡Intercambio de Amigo Secreto Completado!",
+        "description": "Tu intercambio de Amigo Secreto se ha completado con éxito. ¡Comparte la alegría navideña!",
+        "imageAlt": "Intercambio de Amigo Secreto Completado"
+      },
+      "twitter": {
+        "title": "¡Intercambio de Amigo Secreto Completado!",
+        "description": "¡Tu intercambio de Amigo Secreto se ha completado con éxito!"
+      }
+    },
+    "common": {
+      "copyright": "© {year} Easy Secret Santa. Todos los derechos reservados."
+    }
+  },
+  "holidayActivities": {
+    "title": "Actividades Navideñas Divertidas",
+    "activities": {
+      "decorateTree": {
+        "title": "Decorar el Árbol",
+        "description": "Reúnanse y den vida al espíritu navideño decorando el árbol de Navidad con luces, adornos y guirnaldas."
+      },
+      "bakeCookies": {
+        "title": "Hornear Galletas",
+        "description": "Prepara deliciosas galletas navideñas. Sé creativo con formas, decoraciones y sabores que todos disfrutarán."
+      },
+      "buildSnowman": {
+        "title": "Construir un Muñeco de Nieve",
+        "description": "Aprovecha el clima nevado construyendo un muñeco de nieve. ¡No olvides la nariz de zanahoria y la bufanda acogedora!"
+      },
+      "goSledding": {
+        "title": "Ir en Trineo",
+        "description": "Dirígete a las pendientes para divertirte en trineo. Siente la emoción mientras te deslizas por colinas nevadas con amigos y familia."
+      },
+      "exchangeGifts": {
+        "title": "Intercambiar Regalos",
+        "description": "Organiza un intercambio de regalos con seres queridos. Comparte alegría y sorpresas a través de regalos considerados."
+      },
+      "singCarols": {
+        "title": "Cantar Villancicos",
+        "description": "Difunde alegría cantando villancicos navideños. Reúne un grupo y lleva alegría a tu vecindario con canciones festivas."
+      },
+      "watchMovies": {
+        "title": "Ver Películas Navideñas",
+        "description": "Acurrúcate con películas navideñas clásicas. Desde historias conmovedoras hasta aventuras cómicas, hay algo para todos."
+      },
+      "christmasMarket": {
+        "title": "Visitar un Mercado Navideño",
+        "description": "Explora un mercado navideño local. Disfruta de comidas festivas, regalos artesanales y el cálido ambiente navideño."
+      }
+    },
+    "buttons": {
+      "returnHome": "Volver al Inicio"
+    }
+  },
+  "faqs": {
+    "title": "Preguntas Frecuentes",
+    "questions": {
+      "assignments": {
+        "title": "¿Cómo funcionan las asignaciones?",
+        "answer": "Las asignaciones se hacen de manera aleatoria y automática, asegurando que nadie reciba su propio nombre y que todos tengan alguien a quien regalar."
+      },
+      "security": {
+        "title": "¿Es seguro mi intercambio?",
+        "answer": "Sí, tu información está segura. Utilizamos encriptación de extremo a extremo y nunca compartimos tus datos con terceros."
+      },
+      "budget": {
+        "title": "¿Cómo gestiono el presupuesto?",
+        "answer": "Puedes establecer un presupuesto fijo para todo el grupo o permitir presupuestos individuales. El sistema se asegurará de que todos conozcan los límites."
+      },
+      "participants": {
+        "title": "¿Cuántos participantes puedo añadir?",
+        "answer": "Puedes añadir tantos participantes como quieras. El sistema está diseñado para gestionar grupos de cualquier tamaño."
+      },
+      "emails": {
+        "title": "¿Cómo funcionan las notificaciones por correo?",
+        "answer": "Cada participante recibirá un correo electrónico con su asignación secreta y toda la información necesaria para participar."
+      },
+      "multiple": {
+        "title": "¿Puedo organizar varios intercambios?",
+        "answer": "Sí, puedes organizar tantos intercambios como quieras. Cada intercambio se gestiona de manera independiente."
+      }
+    }
+  },
+  "common": {
+    "copyright": "© {year} Easy Secret Santa. Todos los derechos reservados."
+  },
+  "metadata": {
+    "title": "Easy Secret Santa - Organiza tu Intercambio de Regalos",
+    "description": "Organiza fácilmente tu intercambio de Amigo Secreto. Una forma divertida y sencilla de gestionar los intercambios de regalos navideños.",
+    "keywords": "Amigo Secreto, intercambio de regalos, organizador de regalos navideños, intercambio navideño, Secret Santa en línea, intercambio familiar de regalos, coordinación fácil de regalos",
+    "og": {
+      "title": "Easy Secret Santa - Organiza tu Intercambio de Regalos",
+      "description": "Organiza fácilmente tu intercambio de Amigo Secreto. Una forma divertida y sencilla de gestionar los intercambios de regalos navideños.",
+      "imageAlt": "Easy Secret Santa"
+    },
+    "twitter": {
+      "title": "Easy Secret Santa - Organiza tu Intercambio de Regalos",
+      "description": "Organiza fácilmente tu intercambio de Amigo Secreto",
+      "site": "@easysecretsanta",
+      "creator": "@easysecretsanta"
+    }
+  },
+  "email": {
+    "subject": "🎁 ¡Tu Asignación de Amigo Secreto!",
+    "header": "🎄 Asignación de Amigo Secreto 🎅",
+    "greeting": "¡Ho Ho Ho {name}! 🎅",
+    "assignmentIntro": "Eres el Amigo Secreto de:",
+    "contactInfo": "Contacto:",
+    "wishlistLabel": "Lista de deseos:",
+    "budgetLabel": "Rango de presupuesto:",
+    "footer": "¡Recuerda mantenerlo en secreto y difundir la alegría! 🎁✨",
+    "error": "Error enviando los correos",
+    "success": "¡Correos enviados correctamente!"
+  },
+  "page": {
+    "title": "Organiza tu Amigo Secreto",
+    "description": "Crea y gestiona tu intercambio de Amigo Secreto de manera fácil y divertida",
+    "loading": "Cargando...",
+    "error": "Se ha producido un error",
+    "success": "Operación completada con éxito",
+    "buttons": {
+      "back": "Volver",
+      "next": "Siguiente",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "edit": "Editar"
+    },
+    "metadata": {
+      "title": "Organiza tu Amigo Secreto",
+      "description": "Crea y gestiona tu intercambio de Amigo Secreto de manera fácil y divertida",
+      "og": {
+        "title": "Organiza tu Amigo Secreto",
+        "description": "Crea y gestiona tu intercambio de Amigo Secreto de manera fácil y divertida",
+        "imageAlt": "Página de Amigo Secreto"
+      },
+      "twitter": {
+        "title": "Organiza tu Amigo Secreto",
+        "description": "Crea y gestiona tu intercambio de Amigo Secreto de manera fácil y divertida"
+      }
+    }
+  }
+}

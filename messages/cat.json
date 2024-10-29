@@ -1,0 +1,213 @@
+{
+  "home": {
+    "title": "Easy Amic invisible - Organitza el teu intercanvi de regals",
+    "subtitle": {
+      "easy": "Fàcil",
+      "secretSanta": "Amic invisible"
+    },
+    "description": "Organitza fàcilment el teu intercanvi de regals del Amic invisible. Una manera divertida i senzilla de gestionar els intercanvis de regals nadalencs.",
+    "buttons": {
+      "startExchange": "Començar Intercanvi",
+      "holidayActivities": "Activitats Nadalenques"
+    },
+    "features": {
+      "title": "Per què triar Easy Amic invisible?",
+      "list": {
+        "interface": "Interfície fàcil d'utilitzar",
+        "assignments": "Assignacions aleatòries",
+        "wishlists": "Gestió de llistes de desitjos",
+        "groupSize": "Grups de qualsevol mida"
+      }
+    },
+    "howItWorks": {
+      "title": "Com Funciona",
+      "steps": {
+        "step1": "Afegeix participants",
+        "step2": "Estableix el pressupost",
+        "step3": "Personalitza les llistes de desitjos",
+        "step4": "Envia les assignacions"
+      }
+    }
+  },
+  "participants": {
+    "title": "Afegir Participant Individual",
+    "form": {
+      "name": "Nom",
+      "email": "Correu electrònic",
+      "wishlist": "Llista de desitjos",
+      "fixedBudget": "Pressupost Fix",
+      "globalBudget": "Pressupost Global",
+      "individualBudget": "Pressupost Individual",
+      "submit": "Enviar",
+      "back": "Tornar"
+    },
+    "list": {
+      "title": "Llista de Participants",
+      "startExchange": "Començar Intercanvi",
+      "loading": "Carregant..."
+    },
+    "template": {
+      "download": "Descarregar Plantilla",
+      "dropzone": "Arrossega el fitxer CSV aquí o fes clic per pujar-lo"
+    }
+  },
+  "done": {
+    "title": "Intercanvi Amic invisible Completat - Comparteix l'Alegria Nadalenca!",
+    "congratulations": "Amic invisible Completat!",
+    "description": "Felicitats! El teu intercanvi Amic invisible ha estat un èxit. Comparteix l'alegria nadalenca amb els altres!",
+    "share": {
+      "whatsapp": "Compartir per WhatsApp",
+      "facebook": "Compartir per Facebook",
+      "twitter": "Compartir per Twitter"
+    },
+    "buttons": {
+      "startOver": "Començar de Nou",
+      "organizeAnother": "Organitzar un Altre Intercanvi",
+      "holidayActivities": "Activitats Nadalenques"
+    },
+    "metadata": {
+      "title": "Intercanvi Amic invisible Completat - Comparteix l'Alegria Nadalenca!",
+      "description": "El teu intercanvi Amic invisible s'ha completat amb èxit. Comparteix l'alegria nadalenca amb els altres!",
+      "og": {
+        "title": "Intercanvi Amic invisible Completat!",
+        "description": "El teu intercanvi Amic invisible s'ha completat amb èxit. Comparteix l'alegria nadalenca!",
+        "imageAlt": "Intercanvi Amic invisible Completat"
+      },
+      "twitter": {
+        "title": "Intercanvi Amic invisible Completat!",
+        "description": "El teu intercanvi Amic invisible s'ha completat amb èxit!"
+      }
+    },
+    "common": {
+      "copyright": "© {year} Easy Secret Santa. Tots els drets reservats."
+    }
+  },
+  "holidayActivities": {
+    "title": "Activitats Nadalenques Divertides",
+    "activities": {
+      "decorateTree": {
+        "title": "Decorar l'Arbre",
+        "description": "Reuneix-te i porta l'esperit nadalenc a la vida decorant l'arbre de Nadal amb llums, ornaments i garlandes."
+      },
+      "bakeCookies": {
+        "title": "Fer Galetes",
+        "description": "Prepara unes delicioses galetes nadalenques. Sigues creatiu amb les formes, decoracions i sabors que tothom gaudirà."
+      },
+      "buildSnowman": {
+        "title": "Construir un Ninot de Neu",
+        "description": "Aprofita el temps nevat construint un ninot de neu. No t'oblidis del nas de pastanaga i la bufanda acollidora!"
+      },
+      "goSledding": {
+        "title": "Anar en Trineu",
+        "description": "Vés als pendents per divertir-te amb el trineu. Sent l'emoció mentre llisques pels turons nevats amb amics i família."
+      },
+      "exchangeGifts": {
+        "title": "Intercanviar Regals",
+        "description": "Organitza un intercanvi de regals amb els éssers estimats. Comparteix alegria i sorpreses a través de regals pensats."
+      },
+      "singCarols": {
+        "title": "Cantar Nadales",
+        "description": "Difon l'alegria cantant nadales. Reuneix un grup i porta alegria al teu veïnat amb cançons festives."
+      },
+      "watchMovies": {
+        "title": "Mirar Pel·lícules Nadalenques",
+        "description": "Relaxa't amb pel·lícules nadalenques clàssiques. Des d'històries emotives fins a aventures còmiques, hi ha alguna cosa per a tothom."
+      },
+      "christmasMarket": {
+        "title": "Visitar un Mercat de Nadal",
+        "description": "Explora un mercat de Nadal local. Gaudeix del menjar festiu, regals artesanals i l'ambient nadalenc càlid."
+      }
+    },
+    "buttons": {
+      "returnHome": "Tornar a l'Inici"
+    }
+  },
+  "faqs": {
+    "title": "Preguntes Freqüents",
+    "questions": {
+      "assignments": {
+        "title": "Com funcionen les assignacions?",
+        "answer": "Les assignacions es fan de manera aleatòria i automàtica, assegurant que ningú rebi el seu propi nom i que tothom tingui algú per regalar."
+      },
+      "security": {
+        "title": "És segur el meu intercanvi?",
+        "answer": "Sí, la teva informació està segura. Utilitzem encriptació d'extrem a extrem i mai compartim les teves dades amb tercers."
+      },
+      "budget": {
+        "title": "Com gestiono el pressupost?",
+        "answer": "Pots establir un pressupost fix per a tot el grup o permetre pressupostos individuals. El sistema s'assegurarà que tothom conegui els límits."
+      },
+      "participants": {
+        "title": "Quants participants puc afegir?",
+        "answer": "Pots afegir tants participants com vulguis. El sistema està dissenyat per gestionar grups de qualsevol mida."
+      },
+      "emails": {
+        "title": "Com funcionen les notificacions per correu?",
+        "answer": "Cada participant rebrà un correu electrònic amb la seva assignació secreta i tota la informació necessària per participar."
+      },
+      "multiple": {
+        "title": "Puc organitzar diversos intercanvis?",
+        "answer": "Sí, pots organitzar tants intercanvis com vulguis. Cada intercanvi es gestiona de manera independent."
+      }
+    }
+  },
+  "common": {
+    "copyright": "© {year} Easy Secret Santa. Tots els drets reservats."
+  },
+  "metadata": {
+    "title": "Easy Amic Invisible - Organitza el teu intercanvi de regals",
+    "description": "Organitza fàcilment el teu intercanvi de regals del Amic invisible. Una manera divertida i senzilla de gestionar els intercanvis de regals nadalencs.",
+    "keywords": "Amic invisible, intercanvi de regals, organitzador de regals nadalencs, intercanvi nadalenc, Secret Santa en línia, intercanvi familiar de regals, coordinació fàcil de regals",
+    "og": {
+      "title": "Easy Amic Invisible - Organitza el teu intercanvi de regals",
+      "description": "Organitza fàcilment el teu intercanvi de regals del Amic invisible. Una manera divertida i senzilla de gestionar els intercanvis de regals nadalencs.",
+      "imageAlt": "Easy Secret Santa"
+    },
+    "twitter": {
+      "title": "Easy Amic Invisible - Organitza el teu intercanvi de regals",
+      "description": "Organitza fàcilment el teu intercanvi de regals del Amic invisible",
+      "site": "@easysecretsanta",
+      "creator": "@easysecretsanta"
+    }
+  },
+  "email": {
+    "subject": "🎁 La teva Assignació d'Amic Invisible!",
+    "header": "🎄 Assignació d'Amic Invisible 🎅",
+    "greeting": "Ho Ho Ho {name}! 🎅",
+    "assignmentIntro": "Ets l'Amic Invisible de:",
+    "contactInfo": "Contacte:",
+    "wishlistLabel": "Llista de desitjos:",
+    "budgetLabel": "Rang de pressupost:",
+    "footer": "Recorda mantenir-ho en secret i difondre l'alegria! 🎁✨",
+    "error": "Error enviant els correus",
+    "success": "Correus enviats correctament!"
+  },
+  "page": {
+    "title": "Organitza el teu Amic Invisible",
+    "description": "Crea i gestiona el teu intercanvi d'Amic Invisible de manera fàcil i divertida",
+    "loading": "Carregant...",
+    "error": "S'ha produït un error",
+    "success": "Operació completada amb èxit",
+    "buttons": {
+      "back": "Tornar",
+      "next": "Següent",
+      "save": "Desar",
+      "cancel": "Cancel·lar",
+      "delete": "Eliminar",
+      "edit": "Editar"
+    },
+    "metadata": {
+      "title": "Organitza el teu Amic Invisible",
+      "description": "Crea i gestiona el teu intercanvi d'Amic Invisible de manera fàcil i divertida",
+      "og": {
+        "title": "Organitza el teu Amic Invisible",
+        "description": "Crea i gestiona el teu intercanvi d'Amic Invisible de manera fàcil i divertida",
+        "imageAlt": "Pàgina d'Amic Invisible"
+      },
+      "twitter": {
+        "title": "Organitza el teu Amic Invisible",
+        "description": "Crea i gestiona el teu intercanvi d'Amic Invisible de manera fàcil i divertida"
+      }
+    }
+  }
+}
