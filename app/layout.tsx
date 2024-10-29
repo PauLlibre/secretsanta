@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Comic_Neue } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
 
 const comicNeue = Comic_Neue({
   weight: ["400", "700"],
@@ -29,7 +30,10 @@ export default async function LocaleLayout(props: {
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className={`${comicNeue.variable} antialiased`}>{children}</body>
+      <body className={`${comicNeue.variable} antialiased`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

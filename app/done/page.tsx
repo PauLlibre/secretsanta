@@ -3,9 +3,20 @@
 import { useRouter } from "next/navigation";
 import { FaRedo, FaShareAlt, FaWhatsapp, FaFacebook, FaTwitter } from "react-icons/fa";
 import Head from "next/head";
+import Confetti from "react-confetti";
+import { useEffect, useState } from "react";
 
 export default function Done() {
   const router = useRouter();
+  const [showConfetti, setShowConfetti] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowConfetti(false);
+    }, 5000); // Display confetti for 5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const shareMessage = encodeURIComponent(
     "We just completed our Secret Santa exchange! It was so much fun! 🎅🎁 Check it out: https://easysecret-santa.com"
@@ -35,43 +46,41 @@ export default function Done() {
           content="Your Secret Santa gift exchange was a success! Share the holiday joy with friends and family. Organize fun and easy gift exchanges with Easy Secret Santa."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* Open Graph Meta Tags */}
-        <meta
-          property="og:title"
-          content="Secret Santa Exchange Complete - Share the Holiday Joy!"
-        />
-        <meta
-          property="og:description"
-          content="Your Secret Santa gift exchange was a success! Share the holiday joy with friends and family."
-        />
+        <meta property="og:title" content="Secret Santa Exchange Complete - Share the Holiday Joy!" />
+        <meta property="og:description" content="Your Secret Santa gift exchange was a success! Share the holiday joy with friends and family." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://easysecret-santa.com/done" />
         <meta property="og:image" content="https://easysecret-santa.com/og-image.jpg" />
-        {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Secret Santa Exchange Complete" />
-        <meta
-          name="twitter:description"
-          content="Your Secret Santa gift exchange was a success! Share the holiday joy with friends and family."
-        />
+        <meta name="twitter:description" content="Your Secret Santa gift exchange was a success! Share the holiday joy with friends and family." />
         <meta name="twitter:image" content="https://easysecret-santa.com/twitter-image.jpg" />
         <link rel="canonical" href="https://easysecret-santa.com/done" />
-        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "name": "Secret Santa Exchange Complete",
-              "url": "https://easysecret-santa.com/done",
-              "description":
-                "Your Secret Santa gift exchange was a success! Share the holiday joy with friends and family.",
+              name: "Secret Santa Exchange Complete",
+              url: "https://easysecret-santa.com/done",
+              description: "Your Secret Santa gift exchange was a success! Share the holiday joy with friends and family.",
             }),
           }}
         />
       </Head>
+
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
+        {showConfetti && (
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            numberOfPieces={400}
+            recycle={false}
+            gravity={0.3}
+          />
+        )}
+        
         <header className="py-8">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <button
@@ -83,6 +92,7 @@ export default function Done() {
             </button>
           </div>
         </header>
+        
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <section className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-6 text-gray-800 flex items-center justify-center gap-4">
@@ -141,6 +151,7 @@ export default function Done() {
             </div>
           </section>
         </main>
+        
         <footer className="py-8 text-center text-gray-500">
           &copy; {new Date().getFullYear()} Easy Secret Santa. All rights reserved.
         </footer>
