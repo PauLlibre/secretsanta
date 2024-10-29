@@ -14,7 +14,12 @@ import watchMovies from "../../../../public/images/movies.jpg";
 import christmasMarket from "../../../../public/images/christmas-market.jpg";
 import { setRequestLocale } from 'next-intl/server';
 
-export default function HolidayActivities({ params: { locale } }: { params: { locale: string } }) {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function HolidayActivities({ params }: PageProps) {
+  const { locale } = await params;
   setRequestLocale(locale);
   
   const router = useRouter();
