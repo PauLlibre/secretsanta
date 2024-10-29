@@ -1,9 +1,9 @@
 // app/[locale]/page.tsx or wherever your Home component is located
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { FaGift, FaSleigh } from 'react-icons/fa';
-import Head from 'next/head';
+import { useRouter } from "next/navigation";
+import { FaGift, FaSleigh } from "react-icons/fa";
+import Head from "next/head";
 
 export default function Home() {
   const router = useRouter();
@@ -15,9 +15,22 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Easy Secret Santa - Organize Your Gift Exchange Effortlessly</title>
-        <meta name="description" content="Join Easy Secret Santa to organize your gift exchange effortlessly. Create, manage, and share your Secret Santa event with ease." />
-        <meta name="keywords" content="Secret Santa, gift exchange, holiday, Christmas, organize, manage, share" />
+        <title>
+          Easy Secret Santa - Organize Your Gift Exchange Effortlessly
+        </title>
+        <meta
+          name="description"
+          content="Join Easy Secret Santa to organize your gift exchange effortlessly. Create, manage, and share your Secret Santa event with ease."
+        />
+        <meta
+          name="keywords"
+          content="Secret Santa, gift exchange, holiday, Christmas, organize, manage, share"
+        />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6085265425953301"
+          crossOrigin="anonymous"
+        ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50">
