@@ -1,7 +1,7 @@
 // app/[locale]/page.tsx or wherever your Home component is located
 'use client';
 
-import { useRouter, useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { FaGift, FaSleigh } from 'react-icons/fa';
 import Head from 'next/head';
 

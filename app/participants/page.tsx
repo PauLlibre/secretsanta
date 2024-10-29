@@ -67,6 +67,7 @@ export default function Participants() {
       router.push('/done');
     } catch (error) {
       alert('There was an error assigning Secret Santa.');
+      console.error(error);
     }
     setIsLoading(false);
   };
