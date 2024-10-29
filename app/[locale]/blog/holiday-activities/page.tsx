@@ -1,5 +1,3 @@
-"use client";
-
 import { FaTree, FaSnowman, FaCookieBite, FaSleigh, FaGifts, FaMusic, FaFilm } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -12,8 +10,11 @@ import exchangeGifts from "../../../../public/images/gifts.jpg";
 import singCarols from "../../../../public/images/carols.jpg";
 import watchMovies from "../../../../public/images/movies.jpg";
 import christmasMarket from "../../../../public/images/christmas-market.jpg";
+import { setRequestLocale } from 'next-intl/server';
 
-export default function HolidayActivities() {
+export default function HolidayActivities({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
+  
   const router = useRouter();
   const t = useTranslations('holidayActivities');
   const common = useTranslations('common');
