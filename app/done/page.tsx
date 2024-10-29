@@ -9,13 +9,36 @@ import { useEffect, useState } from "react";
 export default function Done() {
   const router = useRouter();
   const [showConfetti, setShowConfetti] = useState(true);
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowConfetti(false);
     }, 5000); // Display confetti for 5 seconds
 
-    return () => clearTimeout(timer);
+    // Set window dimensions after mount
+    setWindowDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+
+    // Handle window resize
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const shareMessage = encodeURIComponent(
@@ -71,10 +94,10 @@ export default function Done() {
       </Head>
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
-        {showConfetti && (
+        {showConfetti && windowDimensions.width > 0 && (
           <Confetti
-            width={window.innerWidth}
-            height={window.innerHeight}
+            width={windowDimensions.width}
+            height={windowDimensions.height}
             numberOfPieces={400}
             recycle={false}
             gravity={0.3}
