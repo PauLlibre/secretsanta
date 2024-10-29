@@ -18,16 +18,14 @@ export const metadata: Metadata = {
 export default async function LocaleLayout(
   props: {
     children: React.ReactNode;
-    params: { locale: string };
   }
 ) {
-  const { children, params } = props;
-  const locale = params.locale;
+  const { children } = props;
 
   return (
-    <html lang={locale}>
+    <html lang="en">
       <body className={`${comicNeue.variable} antialiased`}>
-          {children}
+        {children}
       </body>
     </html>
   );
