@@ -4,8 +4,8 @@ export async function POST(req: Request) {
   const { participants } = await req.json();
 
   // Create assignments by shuffling participants
-  let assignments = [];
-  let shuffled = [...participants];
+  const assignments = [];
+  const shuffled = [...participants];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   });
 
   try {
-    for (let { giver, receiver } of assignments) {
+    for (const { giver, receiver } of assignments) {
       const emailHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(to bottom right, #ff4444, #ff0000); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">

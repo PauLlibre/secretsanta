@@ -15,10 +15,10 @@ export default function Done() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
       <div className="max-w-4xl mx-auto p-8">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <button
             onClick={() => router.push('/')}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center gap-2 shadow-md"
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center gap-2 shadow-md mb-4 md:mb-0"
           >
             <FaRedo className="text-xl" /> Start Over
           </button>
